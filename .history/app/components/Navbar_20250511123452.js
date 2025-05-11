@@ -38,7 +38,7 @@ export default function Navbar() {
         </div>
 
         {/* Centered Site Title */}
-        <div className="absolute left-1/2 -translate-x-1/2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black whitespace-nowrap">
+        <div className="absolute left-1/2 -translate-x-1/2 text-lg sm:text-xl md:text-2xl font-bold text-blue-600 whitespace-nowrap">
           <Link href="/">Kind Blogs Site</Link>
         </div>
 

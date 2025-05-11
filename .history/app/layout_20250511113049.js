@@ -14,8 +14,13 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="pt-12">
-        <Providers session={session}>{children}</Providers>
+      <body>
+        <Providers session={session}>
+          <div className="pt-20">
+            {/* Push content below fixed navbar */}
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );

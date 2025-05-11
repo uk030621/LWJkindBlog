@@ -45,7 +45,7 @@ export default function CreateBlogPage() {
 
   return (
     <div className=" mx-auto p-6   rounded shadow bg-background w-screen h-screen">
-      <h1 className="text-2xl font-bold mb-4 text-slate-700">
+      <h1 className="text-2xl font-bold mb-4 text-gray-800">
         Create a Kind Blog
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">

@@ -37,9 +37,7 @@ export default function BlogList({ blogs }) {
 
   return (
     <div className=" mx-auto px-4 py-8 bg-background w-screen h-screen">
-      <h1 className="text-2xl font-bold mb-6 text-left text-slate-700">
-        Kind Blogs Page
-      </h1>
+      <h1 className="text-2xl font-bold mb-6 text-left">Kind Blogs Page</h1>
 
       <div className="mb-6 mr-4">
         <input

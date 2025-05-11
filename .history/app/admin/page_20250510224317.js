@@ -18,7 +18,7 @@ export default async function AdminPage() {
 
   return (
     <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background w-screen h-screen">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-left text-slate-700">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-left">
         Admin Dashboard
       </h1>
 

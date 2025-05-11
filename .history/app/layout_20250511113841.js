@@ -1,8 +1,8 @@
-// app/layout.js
 import "./globals.css";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import Providers from "./components/Providers";
+import Navbar from "./components/Navbar"; // move it here
 
 export const metadata = {
   title: "Community Blog",
@@ -14,8 +14,11 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="pt-12">
-        <Providers session={session}>{children}</Providers>
+      <body>
+        <Navbar />
+        <Providers session={session}>
+          <main className="pt-20">{children}</main>
+        </Providers>
       </body>
     </html>
   );

@@ -30,20 +30,19 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-slate-200 shadow-md py-4 px-2">
       <div className="flex justify-between items-center">
+        <div className="text-xl font-bold text-blue-600">
+          <Link href="/">Kind Blogs Site</Link>
+        </div>
+
         {/* Hamburger Button (Mobile only) */}
-        <div className="md:hidden ml-4">
+        <div className="md:hidden">
           <button onClick={toggleMenu} aria-label="Toggle menu">
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Centered Site Title */}
-        <div className="absolute left-1/2 -translate-x-1/2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black whitespace-nowrap">
-          <Link href="/">Kind Blogs Site</Link>
-        </div>
-
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-4 ml-6">
+        <div className="hidden md:flex items-center gap-4">
           <Link href="/" className="text-gray-700 hover:text-blue-600">
             Home
           </Link>
@@ -103,24 +102,15 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-4 px-6">
-          <Link
-            href="/"
-            onClick={() => setMenuOpen(false)}
-            className="text-gray-700 hover:text-blue-600"
-          >
+          <Link href="/" className="text-gray-700 hover:text-blue-600">
             Home
           </Link>
-          <Link
-            href="/blog"
-            onClick={() => setMenuOpen(false)}
-            className="text-gray-700 hover:text-blue-600"
-          >
+          <Link href="/blog" className="text-gray-700 hover:text-blue-600">
             Blogs
           </Link>
           {session?.user && (
             <Link
               href="/blog/create"
-              onClick={() => setMenuOpen(false)}
               className="text-gray-700 hover:text-blue-600"
             >
               Create
@@ -129,7 +119,6 @@ export default function Navbar() {
           {role === "admin" && (
             <Link
               href="/admin"
-              onClick={() => setMenuOpen(false)}
               className="text-gray-700 hover:text-blue-600 font-semibold"
             >
               Admin
@@ -137,27 +126,21 @@ export default function Navbar() {
           )}
           {session ? (
             <button
-              onClick={() => {
-                setMenuOpen(false);
-                signOut({ callbackUrl: "/" });
-              }}
+              onClick={() => signOut({ callbackUrl: "/" })}
               className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm"
             >
               Sign Out
             </button>
           ) : (
             <button
-              onClick={() => {
-                setMenuOpen(false);
-                signIn("google", { callbackUrl: "/" });
-              }}
+              onClick={() => signIn("google", { callbackUrl: "/" })}
               className="text-lg px-4 py-2 bg-blue-700 hover:bg-blue-500 text-white rounded flex items-center justify-center"
             >
               <Image
-                src="/G.png"
+                src="/G.png" // Replace with the path to your Google logo
                 alt="Google logo"
-                width={30}
-                height={30}
+                width={30} // Set the width of the image
+                height={30} // Set the height of the image
                 className="rounded-md mr-2"
               />
               Sign In with Google
